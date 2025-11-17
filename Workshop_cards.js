@@ -1,4 +1,3 @@
-1)
 function showAllNames() {
     const names = document.querySelectorAll('.card');
     names.forEach(n => {
@@ -7,7 +6,6 @@ function showAllNames() {
 }
 showAllNames();
 
-2)
 function showUniqueNationalities() {
     let natios = [];
     personnes.forEach((p,i) => {
@@ -18,7 +16,6 @@ function showUniqueNationalities() {
 }
 showUniqueNationalities();
 
-3)
 function countMoroccan(){
     let countt =0; 
     personnes.forEach(e => {
@@ -30,7 +27,7 @@ function countMoroccan(){
 }
 countMoroccan();
 
-4)
+
 let indice; 
 let cards = Array.from(document.querySelectorAll(".card"));
 
@@ -43,7 +40,7 @@ function removeTunisians() {
 }
 removeTunisians();
 
-5)
+
 function highlightMoroccan() {
      const btn = document.createElement('button');
 btn.textContent = 'Colorise Moroccans';
@@ -60,7 +57,7 @@ btn.addEventListener('click' , () => {
  }
 highlightMoroccan()
 
-6)
+
 let tempo ;
 let tempoPers;
 let cards = Array.from(document.querySelectorAll(".card"));
@@ -87,7 +84,7 @@ function sortByName() {
 
 sortByName();
 
-7)
+
 const cards = document.querySelectorAll('.card');
 function filterMoroccan(){
     cards.forEach((card,i) => {
@@ -98,7 +95,7 @@ function filterMoroccan(){
 };
 filterMoroccan();
 
-8)
+
 function showNamesStartingWithA() {
     const cards = document.querySelectorAll('.card-info');
     cards.forEach(c => {
@@ -109,7 +106,7 @@ function showNamesStartingWithA() {
 }
 showNamesStartingWithA();
 
-9)
+
 function searchCards(){
 const search = document.createElement('input');
 document.body.append(search);
@@ -131,7 +128,7 @@ const cards = document.querySelectorAll('.card');
 })
 }
 
-10)
+
 function countVisibleCards(){
     const cards = document.querySelectorAll('.card');
     return cards.length;
