@@ -1,0 +1,139 @@
+1)
+function showAllNames() {
+    const names = document.querySelectorAll('.card');
+    names.forEach(n => {
+    console.log(n.textContent);
+})
+}
+showAllNames();
+
+2)
+function showUniqueNationalities() {
+    let natios = [];
+    personnes.forEach((p,i) => {
+    natios[i] = p.nationalite;
+    natioUnique = [...new Set(natios)];
+});
+    console.log(natioUnique);
+}
+showUniqueNationalities();
+
+3)
+function countMoroccan(){
+    let countt =0; 
+    personnes.forEach(e => {
+      if (e.nationalite == 'Marocaine') {
+        countt++
+      }
+    });
+    console.log(countt);
+}
+countMoroccan();
+
+4)
+let indice; 
+let cards = Array.from(document.querySelectorAll(".card"));
+
+function removeTunisians() {
+    for(let i = 0 ; i < personnes.length ; i++ ) {
+        if ("Tunisienne" === personnes[i].nationalite) {
+            cards[i].remove();
+        }
+}
+}
+removeTunisians();
+
+5)
+function highlightMoroccan() {
+     const btn = document.createElement('button');
+btn.textContent = 'Colorise Moroccans';
+document.body.append(btn);
+btn.style.marginTop = "60px";
+const cards = document.querySelectorAll('.card');
+btn.addEventListener('click' , () => {
+    cards.forEach((c,i) => {
+        if (personnes[i].nationalite === 'Marocaine') {
+            c.style.backgroundColor = 'green';
+        }
+    })
+});
+ }
+highlightMoroccan()
+
+6)
+let tempo ;
+let tempoPers;
+let cards = Array.from(document.querySelectorAll(".card"));
+
+function sortByName() {
+    for (let i = 0 ; i < personnes.length ; i++) {
+        for (let j = 0; j < personnes.length - 1; j++) {
+
+            if (personnes[j].nom > personnes[j+1].nom) {
+
+                tempPers = personnes[j];
+                personnes[j] = personnes[j+1];
+                personnes[j+1] = tempPers;
+                tempo = cards[j];
+                cards[j] = cards[j+1];
+                cards[j+1] = tempo;
+            }
+        }
+    }
+
+    let container = document.querySelector("#cards-container");
+    cards.forEach(card => container.appendChild(card));
+}
+
+sortByName();
+
+7)
+const cards = document.querySelectorAll('.card');
+function filterMoroccan(){
+    cards.forEach((card,i) => {
+        if (personnes[i].nationalite === 'Marocaine') {
+            console.log(card.textContent);
+        }
+    })
+};
+filterMoroccan();
+
+8)
+function showNamesStartingWithA() {
+    const cards = document.querySelectorAll('.card-info');
+    cards.forEach(c => {
+        if(c.textContent.trim().startsWith("A")){
+            console.log(c.textContent);
+        }
+})
+}
+showNamesStartingWithA();
+
+9)
+function searchCards(){
+const search = document.createElement('input');
+document.body.append(search);
+search.setAttribute("placeholder" , "enter a name");
+search.style.width = '100px';
+search.style.marginTop = '50px';
+const btnSearch = document.createElement('button');
+btnSearch.textContent = "Search";
+document.body.append(btnSearch);
+const cards = document.querySelectorAll('.card');
+
+
+    btnSearch.addEventListener('click' , () =>{
+    cards.forEach( card => {
+        if(card.textContent.trim() === search.value){
+            console.log(card.textContent);
+        } 
+    })
+})
+}
+
+10)
+function countVisibleCards(){
+    const cards = document.querySelectorAll('.card');
+    return cards.length;
+}
+countVisibleCards();
